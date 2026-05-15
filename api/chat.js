@@ -7,6 +7,8 @@ const ALLOWED_ORIGINS = [
   'http://localhost:4173',
 ];
 
+const PAUSED = true;
+
 const ALLOWED_MODEL = 'claude-sonnet-4-20250514';
 const MAX_TOKENS_CAP = 1000;
 
@@ -23,6 +25,10 @@ function getApiKey() {
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  if (PAUSED) {
+    return res.status(503).json({ error: 'AI coach is temporarily unavailable.' });
   }
 
   const origin = req.headers.origin || '';
