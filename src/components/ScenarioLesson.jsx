@@ -52,7 +52,7 @@ export function ScenarioLesson({ lesson, onComplete, addXP, T, isMobile }) {
   const allPassed = results && passedCount === results.length;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 820 }}>
       <div style={{ background: T.bgSecondary, border: `1px solid ${T.border}`, borderRadius: 7, padding: "12px 14px" }}>
         <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: T.textMuted, marginBottom: 5, fontWeight: 700 }}>Scenario</div>
         <p style={{ fontSize: isMobile ? 14 : 13.5, lineHeight: 1.8, color: T.textSecondary, margin: 0 }}>{lesson.setup}</p>

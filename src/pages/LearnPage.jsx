@@ -66,6 +66,7 @@ export function LearnPage({ dark, setDark, T, saved }) {
 
   const allLessons = MODULES.flatMap(m => m.lessons);
   const currentIdx = allLessons.findIndex(l => l.id === activeLessonId);
+  const lessonIdxInModule = activeModule?.lessons.findIndex(l => l.id === activeLessonId) ?? -1;
   const prevLesson = allLessons[currentIdx - 1];
   const nextLesson = allLessons[currentIdx + 1];
 
@@ -148,7 +149,7 @@ export function LearnPage({ dark, setDark, T, saved }) {
                 ← Home
               </button>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 1 }}>{activeModule?.tag}</div>
+                <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 1 }}>{activeModule?.tag} · {lessonIdxInModule + 1}/{activeModule?.lessons.length}</div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: T.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{activeLesson?.title}</div>
               </div>
               <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
@@ -181,7 +182,7 @@ export function LearnPage({ dark, setDark, T, saved }) {
               </button>
               <div style={{ width: 1, height: 18, background: T.border }} />
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 9.5, color: T.textMuted, marginBottom: 1, letterSpacing: "0.1em", textTransform: "uppercase" }}>{activeModule?.title} · {activeModule?.tag}</div>
+                <div style={{ fontSize: 9.5, color: T.textMuted, marginBottom: 1, letterSpacing: "0.1em", textTransform: "uppercase" }}>{activeModule?.title} · {activeModule?.tag} · {lessonIdxInModule + 1}/{activeModule?.lessons.length}</div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: T.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{activeLesson?.title}</div>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
