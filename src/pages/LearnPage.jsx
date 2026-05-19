@@ -203,7 +203,7 @@ export function LearnPage({ dark, setDark, T, saved }) {
         </div>
 
         {/* ── LESSON CONTENT ── */}
-        <div style={{ flex: 1, overflow: "auto", padding: isMobile ? "24px 16px 100px" : "40px 48px", maxWidth: isMobile ? "100%" : 860, width: "100%", margin: "0 auto", boxSizing: "border-box" }}>
+        <div style={{ flex: 1, overflow: "auto", padding: isMobile ? "24px 16px 100px" : "40px 56px", width: "100%", boxSizing: "border-box" }}>
           {activeLesson && (
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 22, flexWrap: "wrap" }}>
