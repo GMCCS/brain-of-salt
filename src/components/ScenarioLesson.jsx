@@ -85,6 +85,12 @@ export function ScenarioLesson({ lesson, onComplete, addXP, T, isMobile }) {
             {answer.length > 0 && !submitted && <span style={{ color: T.textMuted, marginLeft: 6 }}>· draft saved</span>}
           </span>
           {!submitted && (
+            <p style={{ fontSize: 11, color: T.textMuted, margin: "6px 0 0", lineHeight: 1.5 }}>
+              Your answer is reviewed by an AI coach (Anthropic). Don't include personal information.{" "}
+              <a href="/privacy" style={{ color: T.textMuted, textDecoration: "underline" }}>Privacy policy</a>
+            </p>
+          )}
+          {!submitted && (
             <button onClick={handleSubmit} disabled={answer.trim().length < minLen}
               aria-label="Run tests and submit your answer"
               style={{ padding: isMobile ? "12px 18px" : "7px 18px", background: answer.trim().length >= minLen ? T.accent : T.bgTertiary, border: `1px solid ${answer.trim().length >= minLen ? T.accent : T.border}`, borderRadius: 6, color: answer.trim().length >= minLen ? "#fff" : T.textMuted, fontSize: 13, fontWeight: 600, cursor: answer.trim().length >= minLen ? "pointer" : "default", transition: "all 0.15s", minHeight: 44 }}>

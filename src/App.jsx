@@ -5,6 +5,7 @@ import { loadProgress, saveProgress } from "./storage";
 import { useIsMobile } from "./hooks/useIsMobile";
 import { HomePage } from "./pages/HomePage";
 import { LearnPage } from "./pages/LearnPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 
 function RedirectToLesson() {
   const saved = loadProgress();
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/" element={<HomePage dark={dark} setDark={setDark} T={T} isMobile={isMobile} />} />
         <Route path="/learn" element={<RedirectToLesson />} />
         <Route path="/learn/:moduleId/:lessonId" element={<LearnPage dark={dark} setDark={setDark} T={T} saved={saved} />} />
+        <Route path="/privacy" element={<PrivacyPage T={T} isMobile={isMobile} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

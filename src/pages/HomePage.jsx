@@ -14,7 +14,7 @@ export function HomePage({ dark, setDark, T, isMobile }) {
   };
 
   const S = {
-    section: { maxWidth: 620, margin: "0 auto", padding: isMobile ? "52px 22px" : "80px 40px" },
+    section: { maxWidth: 760, margin: "0 auto", padding: isMobile ? "52px 22px" : "80px 40px" },
     eyebrow: { fontSize: 10, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: T.textMuted, marginBottom: 20 },
     divider: { borderTop: `1px solid ${T.border}` },
   };
@@ -217,7 +217,7 @@ export function HomePage({ dark, setDark, T, isMobile }) {
         </div>
       </section>
 
-      <section style={{ maxWidth: 620, margin: "0 auto", padding: isMobile ? "32px 22px 72px" : "48px 40px 96px" }}>
+      <section style={{ maxWidth: 760, margin: "0 auto", padding: isMobile ? "32px 22px 72px" : "48px 40px 96px" }}>
         <div style={{ background: T.bgSecondary, border: `1px solid ${T.border}`, borderRadius: 14, padding: isMobile ? "36px 24px" : "52px 52px" }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: T.textMuted, marginBottom: 16 }}>For the PM who can't stop thinking about problems</div>
           <h2 style={{ fontSize: isMobile ? 28 : 38, fontWeight: 800, letterSpacing: "-0.02em", color: T.text, margin: "0 0 18px", lineHeight: 1.15 }}>
@@ -235,6 +235,14 @@ export function HomePage({ dark, setDark, T, isMobile }) {
           </button>
         </div>
       </section>
+
+      <div style={{ borderTop: `1px solid ${T.border}`, padding: isMobile ? "20px 22px" : "20px 48px", display: "flex", justifyContent: "center" }}>
+        <a href="/privacy" style={{ fontSize: 11, color: T.textMuted, textDecoration: "none" }}
+          onMouseEnter={e => e.target.style.color = T.textSecondary}
+          onMouseLeave={e => e.target.style.color = T.textMuted}>
+          Privacy Policy
+        </a>
+      </div>
 
     </div>
   );
