@@ -39,7 +39,7 @@ export function HomePage({ dark, setDark, T, isMobile }) {
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{ ...S.section, paddingTop: isMobile ? 64 : 100, paddingBottom: isMobile ? 52 : 80 }}>
+      <section style={{ ...S.section, paddingTop: isMobile ? 64 : 100, paddingBottom: isMobile ? 52 : 80, textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 7, padding: "4px 12px", borderRadius: 20, border: `1px solid ${T.border}`, background: T.bgSecondary, marginBottom: 32 }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.success, flexShrink: 0 }} />
           <span style={{ fontSize: 11, fontWeight: 600, color: T.textSecondary }}>a thinking companion for product managers</span>
@@ -49,7 +49,7 @@ export function HomePage({ dark, setDark, T, isMobile }) {
           seeing a problem and<br />
           <span style={{ color: T.accent }}>knowing what to do with it.</span>
         </h1>
-        <p style={{ fontSize: isMobile ? 16 : 17, lineHeight: 1.85, color: T.textSecondary, margin: "0 0 40px", maxWidth: 520 }}>
+        <p style={{ fontSize: isMobile ? 16 : 17, lineHeight: 1.85, color: T.textSecondary, margin: "0 auto 40px", maxWidth: 520 }}>
           Not a course. Not a certification. A companion that thinks alongside you —
           through discovery, through decisions, through the messy middle of building
           something that matters.
@@ -124,7 +124,7 @@ export function HomePage({ dark, setDark, T, isMobile }) {
             Start where you are.<br />
             Think further than you have.
           </h2>
-          <p style={{ fontSize: isMobile ? 14.5 : 15, color: T.textSecondary, lineHeight: 1.8, margin: "0 0 32px", maxWidth: 400 }}>
+          <p style={{ fontSize: isMobile ? 14.5 : 15, color: T.textSecondary, lineHeight: 1.8, margin: "0 0 32px" }}>
             No prerequisites. No syllabus to finish.
             Just a companion — with a brain of salt — that meets you where you are
             and helps you think better about what to build next.
